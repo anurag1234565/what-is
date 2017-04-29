@@ -9,6 +9,7 @@ class GetMeaningSpider(scrapy.Spider):
     def start_requests(self):
         url = "http://www.urbandictionary.com/define.php"
         word = getattr(self,'word',None)
+        word = word.replace("+","%2B")
 
         if word is not None:
             url = url+"?term="+word
