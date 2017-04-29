@@ -28,7 +28,7 @@ If you want to run your app in virtual python environment then do the followings
 ## Install Requirements
 ```sh
   cd what-is/
-  pip install -r REQUIREMENTS.txt
+  pip install -r requirements.txt
 ```
 ## Run
 ```sh
