@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
+from bs4 import BeautifulSoup
 
 class GetMeaningSpider(scrapy.Spider):
     name = "get_meaning"
@@ -17,7 +18,7 @@ class GetMeaningSpider(scrapy.Spider):
         # extracted data
         data = {
                 "word": response.css("a.word::text").extract_first(),
-                "meaning": response.css("div.meaning::text").extract_first()
+                "meaning": BeautifulSoup(response.css("div.meaning").extract_first()).text
                 }     
         
         # write output to a file
